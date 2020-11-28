@@ -4,7 +4,17 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare namespace bip21 {
-    export function decode(uri:string) : {address:string,amount?:number};
+	type params = {
+		address:string,
+		amount?:number,
+		label?: string,
+		message?: string,
+		lightning?: string,
+		pj?: string,
+		pjos?: string
+	};
+
+    export function decode(uri:string) : params;
     export function encode(address:string,options?:any) : string;
 }
 
